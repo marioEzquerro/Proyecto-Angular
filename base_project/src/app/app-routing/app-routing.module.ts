@@ -6,8 +6,8 @@ import { PlantillaComponent } from '../pages/home/plantilla/plantilla.component'
 const routes: Routes = [
     {
         path: '',
-        component: PlantillaComponent,
-    },
+        component: PlantillaComponent
+    }
 ];
 
 // configures NgModule imports and exports
@@ -15,4 +15,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRouting { }
+export class AppRoutingModule { }

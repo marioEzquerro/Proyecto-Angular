@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingComponent } from './app-routing/app-routing.component';
 import { AppComponent } from './app.component';
@@ -24,7 +25,8 @@ import { PortadaComponentComponent } from './components/portada-component/portad
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
