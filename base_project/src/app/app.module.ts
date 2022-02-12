@@ -11,6 +11,7 @@ import { ContactoFormComponentComponent } from './components/contacto-form-compo
 import { PortadaComponentComponent } from './components/portada-component/portada-component.component';
 import { ForbiddenUrlComponentComponent } from './components/forbidden-url-component/forbidden-url-component.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DetallesInventosComponentComponent } from './components/detalles-inventos-component/detalles-inventos-component.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     InventosComponentComponent,
     ContactoFormComponentComponent,
     PortadaComponentComponent,
-    ForbiddenUrlComponentComponent    
+    ForbiddenUrlComponentComponent,
+    DetallesInventosComponentComponent    
   ],
   imports: [
     BrowserModule,

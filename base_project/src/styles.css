@@ -12201,3 +12201,17 @@ section#contact form#contactForm :-ms-input-placeholder {
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.nav-auto-display {
+  background-color: #212529; 
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 94px;
+}
+
+@media (max-width: 990px){
+  .nav-auto-display {
+      background-color: white;
+  }
+  
+}

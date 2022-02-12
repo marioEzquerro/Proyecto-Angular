@@ -15,10 +15,6 @@ export class InventosComponentComponent implements OnInit {
     this.inventos = INVENTOS;
   }
 
-  abrirElemento(id: number) {
-    alert("hola" + id);
-  }
-
   ngOnInit(): void {
   }
 
