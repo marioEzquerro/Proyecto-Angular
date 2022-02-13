@@ -1,5 +1,3 @@
-# AngularBase
+# Proyecto Angular Mario Ezquerro
 
-Este un ejemplo base de proyecto de angular. Utilizadlo tanto para las prácticas como para el examen.
-
-Nanai esto es mio
+Debido a unos cambios en la estructura del proyeco la version mas reciente se encuentra en la rama **master**
