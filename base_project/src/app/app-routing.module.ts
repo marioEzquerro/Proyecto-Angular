@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetallesInventosComponentComponent } from './components/detalles-inventos-component/detalles-inventos-component.component';
 // componentes
 import { ForbiddenUrlComponentComponent } from './components/forbidden-url-component/forbidden-url-component.component';
-import { InventosComponentComponent } from './components/inventos-component/inventos-component.component';
 import { PlantillaComponent } from './pages/home/plantilla/plantilla.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'inventos/:idInvento',
-    component: InventosComponentComponent
+    component: DetallesInventosComponentComponent
   },
   {
     path: '**',

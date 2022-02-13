@@ -3,21 +3,9 @@
         <app-nav-component></app-nav-component>
     </div>
    
-   
-    <p>Nombre: {{ invento?.nombre }}</p>
-    <p>Descripcion: {{ invento?.desc }}</p>
-    <!-- <img class="img-fluid" [src]="invento?.img" alt="..." /> -->
-    
-
-    <div class="col-lg-4 col-sm-6 mb-4">
-        <div class=" portfolio-item">
-                <img class="img-fluid" src="/assets/inventos/disco-faraday.jpeg" />
-            
-            <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">Inducción</div>
-                <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit</div>
-            </div>
-        </div>
+    <div class="container text-center mt-5">
+        <h2 class="section-heading text-uppercase">{{ invento?.nombre }}</h2>
+        <img class="img-fluid" [src]="invento?.img" />
+        <div class="portfolio-caption-subheading text-muted">Descripcion: {{ invento?.desc }}</div>   
     </div>
-
 </body>
