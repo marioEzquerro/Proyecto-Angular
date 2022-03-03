@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// compoentes
+import { HttpClientModule } from '@angular/common/http';
+// componentes
 import { PlantillaComponent } from './pages/home/plantilla/plantilla.component';
 import { NavComponentComponent } from './components/nav-component/nav-component.component';
 import { ContactoFormComponentComponent } from './components/contacto-form-component/contacto-form-component.component';
@@ -12,6 +13,9 @@ import { FooterComponentComponent } from './components/footer-component/footer-c
 import { ForbiddenUrlComponentComponent } from './components/forbidden-url-component/forbidden-url-component.component';
 import { InventosComponentComponent } from './components/inventos-component/inventos-component.component';
 import { PortadaComponentComponent } from './components/portada-component/portada-component.component';
+// services
+import { InventoService } from './services/invento.service';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +32,10 @@ import { PortadaComponentComponent } from './components/portada-component/portad
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InventoService /* aqui el de puja tambn*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

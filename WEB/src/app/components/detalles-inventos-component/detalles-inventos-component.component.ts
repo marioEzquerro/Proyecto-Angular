@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { INVENTOS } from 'src/app/utils/invento-constants';
-import { Invento } from '../models/invento.model';
+import { Invento } from 'src/app/models/invento.model';
+import { InventoService } from 'src/app/services/invento.service';
 
 @Component({
   selector: 'app-detalles-inventos-component',
@@ -12,7 +12,7 @@ export class DetallesInventosComponentComponent implements OnInit {
   invento: Invento | null;
   idInvento = 0;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private _inventoService: InventoService) {
     this.invento = null;
   }
   
@@ -21,8 +21,7 @@ export class DetallesInventosComponentComponent implements OnInit {
       this.idInvento = parameters.get('idInvento');
     });
 
-    this.invento = INVENTOS.filter(
-      (x: Invento) => x.id == this.idInvento
-    )[0];
+    //this.invento = INVENTOS.filter((x: Invento) => x.id == this.idInvento)[0];
+    this._inventoService.getInventoDataID(this.idInvento).subscribe(apiInventos => this.invento = apiInventos);
   }
 }
