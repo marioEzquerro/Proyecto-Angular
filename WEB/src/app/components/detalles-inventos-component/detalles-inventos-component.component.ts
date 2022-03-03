@@ -21,7 +21,6 @@ export class DetallesInventosComponentComponent implements OnInit {
       this.idInvento = parameters.get('idInvento');
     });
 
-    //this.invento = INVENTOS.filter((x: Invento) => x.id == this.idInvento)[0];
     this._inventoService.getInventoDataID(this.idInvento).subscribe(apiInventos => this.invento = apiInventos);
   }
 }

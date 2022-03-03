@@ -1,12 +1,30 @@
 <body id="page-top">
-    <div class="nav-auto-display">
-        <app-nav-component></app-nav-component>
+  <div class="nav-auto-display">
+    <app-nav-component></app-nav-component>
+  </div>
+
+  <div class="container text-center mt-5">
+    <div class="row">
+      <h2 class="section-heading text-uppercase mb-4">{{ invento?.nombre }}</h2>
+      <div class="col-12 col-md-8">
+        <img class="img-max img-fluid rounded" [src]="invento?.img" />
+      </div>
+      <div class="col-12 col-md-4 mt-md-0 mt-5">
+        <h4 class="section-subheading text-muted">MAYOR PUJA:</h4>
+        <input class="form-control form-control-lg" type="text" readonly>
+
+        <hr>
+
+        <label for="puja" class="text-muted">Realiza tu puja aqui</label>
+        <input type="number" class="form-control" id="puja" placeholder="€" />
+        <small id="emailHelp" class="form-text text-muted">El ganador sera anunciado trás finalizar el evento.</small>
+        <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+      </div>
+
+      <h4 class="section-subheading text-muted mt-5">Descripción</h4>
+      <p class="portfolio-caption-subheading text-muted">
+        {{ invento?.longDesc }}
+      </p>
     </div>
-   
-    <div class="container text-center mt-5">
-        <h2 class="section-heading text-uppercase">{{ invento?.nombre}}</h2>
-        <img class="img-max img-fluid" [src]="invento?.img" />
-        <h4 class="section-subheading text-muted mt-3">Descripción</h4>
-        <p class="portfolio-caption-subheading text-muted">{{ invento?.longDesc }}</p>   
-    </div>
+  </div>
 </body>
