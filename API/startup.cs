@@ -12,20 +12,21 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
+
         services.AddSingleton<webFaradayContext>(_ =>
             new webFaradayContext(Configuration.GetConnectionString("DefaultConnection")));
-
-
 
         var mapperConfig = new MapperConfiguration(mc =>
         {
             mc.AddProfile(new InventoProfile());
+            mc.AddProfile(new PujaProfile());
         });
 
         IMapper mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);
 
         services.AddSingleton<IInventoService, InventoService>();
+        services.AddSingleton<IPujaService, PujaService>();
 
     }
 

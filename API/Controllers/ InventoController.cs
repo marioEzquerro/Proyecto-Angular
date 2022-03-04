@@ -37,6 +37,20 @@ public class InventosController : ControllerBase
     }
 
 
+    [HttpGet("{Id}/pujas")]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(InventoDTO))]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<List<PujaDTO>>GetPujas(int Id)
+    {
+        List<PujaDTO> result = _inventoService.GetPujas(Id);
+
+        if (result == null)
+            return NotFound();
+
+        return Ok(result);
+    }
+
+
     [HttpDelete("{Id}")]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(InventoDTO))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -52,7 +66,6 @@ public class InventosController : ControllerBase
         return Ok(result);
 
     }
-
 
 
     [HttpPost]

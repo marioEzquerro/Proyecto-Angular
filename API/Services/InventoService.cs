@@ -11,10 +11,10 @@ public class InventoService : IInventoService
         _mapper = mapper;
     }
 
-    public InventoDTO Add(BaseInventoDTO baseBook)
+    public InventoDTO Add(BaseInventoDTO baseInvento)
     {
-        var _mappedBook = _mapper.Map<InventoEntity>(baseBook);
-        var entityAdded = _context.Inventos.Add(_mappedBook);
+        var _mappedInvento = _mapper.Map<InventoEntity>(baseInvento);
+        var entityAdded = _context.Inventos.Add(_mappedInvento);
         _context.SaveChanges();
         return _mapper.Map<InventoDTO>(entityAdded);
     }
@@ -40,21 +40,26 @@ public class InventoService : IInventoService
         return _mapper.Map<InventoDTO>(_context.Inventos.FirstOrDefault(x => x.Id == guid));
     }
 
+    public List<PujaDTO> GetPujas(int id)
+    {
+        return _mapper.Map<List<PujaDTO>>(_context.Pujas.Where(x => x.idInvento == id).OrderByDescending(x => x.cantidad).First());
+    }
+
     public InventoDTO Modify(BaseInventoDTO invento, int guid)
     {
-        var _mappedBook = _mapper.Map<InventoEntity>(invento);
-        _mappedBook.Id = guid;
+        var _mappedInvento = _mapper.Map<InventoEntity>(invento);
+        _mappedInvento.Id = guid;
 
-        InventoEntity modifiedBook = _context.Inventos.FirstOrDefault(x => x.Id == guid);
+        InventoEntity modifiedInvento = _context.Inventos.FirstOrDefault(x => x.Id == guid);
 
-        if (modifiedBook == null)
+        if (modifiedInvento == null)
             return null;
 
-        _context.Entry(modifiedBook).CurrentValues.SetValues(_mappedBook);
+        _context.Entry(modifiedInvento).CurrentValues.SetValues(_mappedInvento);
 
         _context.SaveChanges();
 
-        return _mapper.Map<InventoDTO>(_mappedBook);
+        return _mapper.Map<InventoDTO>(_mappedInvento);
     }
 
 }

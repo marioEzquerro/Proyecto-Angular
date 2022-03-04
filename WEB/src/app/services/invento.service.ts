@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Invento } from '../models/invento.model';
+import { Puja } from '../models/puja.model';
 
 @Injectable()
 export class InventoService {
@@ -16,6 +17,9 @@ export class InventoService {
     return this.http.get<Invento>(environment.API_URL + 'inventos/'+ id);
   }
 
+  getInventoPujas(id: number) : Observable<Puja[]> {
+    return this.http.get<Puja[]>(environment.API_URL + 'inventos/'+ id + "/pujas");
+  }
 
 
   // postInventoData(body : any) : Invento {

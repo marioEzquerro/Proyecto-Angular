@@ -4,9 +4,12 @@ public interface IInventoService
 
     public InventoDTO GetByID(int guid);
 
-    public InventoDTO Add(BaseInventoDTO guid);
+// lista de pujas
+    public List<PujaDTO> GetPujas(int guid);
+
+    public InventoDTO Add(BaseInventoDTO id);
 
     public void Delete(int guid);
 
-    public InventoDTO Modify(BaseInventoDTO book, int guid);
+    public InventoDTO Modify(BaseInventoDTO book, int id);
 }

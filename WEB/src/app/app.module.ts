@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // componentes
 import { PlantillaComponent } from './pages/home/plantilla/plantilla.component';
 import { NavComponentComponent } from './components/nav-component/nav-component.component';
@@ -15,6 +16,7 @@ import { InventosComponentComponent } from './components/inventos-component/inve
 import { PortadaComponentComponent } from './components/portada-component/portada-component.component';
 // services
 import { InventoService } from './services/invento.service';
+import { PujaService } from './services/puja.service';
 
 
 @NgModule({
@@ -33,9 +35,11 @@ import { InventoService } from './services/invento.service';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [InventoService /* aqui el de puja tambn*/],
+  providers: [InventoService, PujaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
