@@ -21,7 +21,7 @@ public class PujaService : IPujaService
 
     public void Delete(int id)
     {
-        PujaEntity puja = _context.Pujas.FirstOrDefault(x => x.id == id);
+        PujaEntity puja = _context.Pujas.FirstOrDefault(x => x.Id == id);
 
         if (puja == null)
             throw new ApplicationException($"Bokk with id {id} not found");
@@ -37,15 +37,15 @@ public class PujaService : IPujaService
 
     public PujaDTO GetByID(int id)
     {
-        return _mapper.Map<PujaDTO>(_context.Pujas.FirstOrDefault(x => x.id == id));
+        return _mapper.Map<PujaDTO>(_context.Pujas.FirstOrDefault(x => x.Id == id));
     }
 
     public PujaDTO Modify(BasePujaDTO puja, int id)
     {
         var _mappedPuja = _mapper.Map<PujaEntity>(puja);
-        _mappedPuja.id = id;
+        _mappedPuja.Id = id;
 
-        PujaEntity modifiedPuja = _context.Pujas.FirstOrDefault(x => x.id == id);
+        PujaEntity modifiedPuja = _context.Pujas.FirstOrDefault(x => x.Id == id);
 
         if (modifiedPuja == null)
             return null;

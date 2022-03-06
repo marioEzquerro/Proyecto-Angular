@@ -35,15 +35,16 @@ public class InventoService : IInventoService
         return _mapper.Map<IEnumerable<InventoDTO>>(_context.Inventos.Select(x => x));
     }
 
-    public InventoDTO GetByID(int guid)
+    public InventoDTO GetByID(int id)
     {
-        return _mapper.Map<InventoDTO>(_context.Inventos.FirstOrDefault(x => x.Id == guid));
+        return _mapper.Map<InventoDTO>(_context.Inventos.FirstOrDefault(x => x.Id == id));
     }
 
-    public List<PujaDTO> GetPujas(int id)
+    public IEnumerable<PujaDTO> GetPujas(int id)
     {
-        return _mapper.Map<List<PujaDTO>>(_context.Pujas.Where(x => x.idInvento == id).OrderByDescending(x => x.cantidad).First());
+        return _mapper.Map<IEnumerable<PujaDTO>>(_context.Pujas.Where(x => x.idInvento == id));
     }
+
 
     public InventoDTO Modify(BaseInventoDTO invento, int guid)
     {

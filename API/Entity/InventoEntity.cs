@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class InventoEntity
 {
 
-    [MaxLength(20)]    
+    [MaxLength(25)]    
     public string nombre { get; set; }
     
     [MaxLength(60)]

@@ -1,8 +1,8 @@
 CREATE TABLE Puja (
-    id INT IDENTITY(1,1),
+    Id INT IDENTITY(1,1),
     idInvento INT,
     cantidad INT,
-    CONSTRAINT pk_idPuja PRIMARY KEY(id),
-    CONSTRAINT pk_idInvemto FOREIGN KEY(idInvento) REFERENCES Invento(Id)
+    CONSTRAINT pk_idPuja PRIMARY KEY(Id),
+    CONSTRAINT fk_idInvento FOREIGN KEY(idInvento) REFERENCES Invento(Id)
 );
 

@@ -13,8 +13,10 @@ public class Startup
     {
         services.AddControllersWithViews();
 
-        services.AddSingleton<webFaradayContext>(_ =>
+        services.AddTransient<webFaradayContext>(_ =>
             new webFaradayContext(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddSwaggerGen(); // para guia del API
 
         var mapperConfig = new MapperConfiguration(mc =>
         {
@@ -35,6 +37,9 @@ public class Startup
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
+            // para guia del API
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
         }
         else

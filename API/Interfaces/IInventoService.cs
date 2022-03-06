@@ -2,10 +2,9 @@ public interface IInventoService
 {
     public IEnumerable<InventoDTO> GetAll();
 
-    public InventoDTO GetByID(int guid);
+    public InventoDTO GetByID(int id);
 
-// lista de pujas
-    public List<PujaDTO> GetPujas(int guid);
+    public IEnumerable<PujaDTO> GetPujas(int id); 
 
     public InventoDTO Add(BaseInventoDTO id);
 

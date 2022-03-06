@@ -9,6 +9,6 @@ public class PujaEntity
 
     public int cantidad { get; set; }
     
-    public int id { get; set; }
+    public int Id { get; set; }
 
 }

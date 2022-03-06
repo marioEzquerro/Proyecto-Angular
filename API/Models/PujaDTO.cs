@@ -6,5 +6,5 @@ public class PujaDTO : BasePujaDTO
     }
 
 
-    public int id { get; set; }
+    public int Id { get; set; }
 }

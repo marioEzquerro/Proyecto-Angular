@@ -5,35 +5,43 @@
 
   <div class="container text-center mt-5">
     <form [formGroup]="nuevaPuja" (ngSubmit)="submit()">
-  
-    <div class="row">
-      <h2 class="section-heading text-uppercase mb-4">{{ invento?.nombre }}</h2>
-      <div class="col-12 col-md-8">
-        <img class="img-max img-fluid rounded" [src]="invento?.img" />
-      </div>
+      <div class="row">
+        <h2 class="section-heading text-uppercase mb-4">
+          {{ invento?.nombre }}
+        </h2>
+        <div class="col-12 col-md-8">
+          <img class="img-max img-fluid rounded" [src]="invento?.img" />
+        </div>
 
-      <div class="col-12 col-md-4">
-        <h4 class="section-subheading text-muted mt-5">Descripción</h4>
-        <p class="portfolio-caption-subheading text-muted">
-          {{ invento?.longDesc }}
-        </p>
+        <div class="col-12 col-md-4">
+          <h4 class="section-subheading text-muted mt-5">Descripción</h4>
+          <p class="portfolio-caption-subheading text-muted">
+            {{ invento?.longDesc }}
+          </p>
 
-        <hr class="mt-5 mb-5" />
+          <hr class="mt-5 mb-5" />
 
-        <h4 class="section-subheading text-muted">MAYOR PUJA:</h4>
-        <input class="form-control form-control-lg" type="text" value={{ maxPuja }}readonly />
+          <h4 class="section-subheading text-muted">MAYOR PUJA:</h4>
+          <input
+            class="form-control form-control-lg text-center"
+            value="{{maxPuja}} €"
+            type="text"
+            readonly
+          />
 
-        
           <label for="puja" class="text-muted">Realiza tu puja aqui</label>
-          <input type="number" class="form-control" id="puja" formControlName="cantidad" placeholder="€" />
+          <input
+            type="number"
+            class="form-control"
+            id="puja"
+            formControlName="cantidad"
+            placeholder="€"
+          />
 
           <small id="emailHelp" class="form-text text-muted">
             El ganador sera anunciado trás finalizar el evento.
           </small>
-          <button class="btn btn-primary mt-3">
-            Enviar
-          </button>
-
+          <button class="btn btn-primary mt-3">Enviar</button>
         </div>
       </div>
     </form>

@@ -38,17 +38,13 @@ public class InventosController : ControllerBase
 
 
     [HttpGet("{Id}/pujas")]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(InventoDTO))]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PujaDTO))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<List<PujaDTO>>GetPujas(int Id)
+    public ActionResult<PujaDTO>GetPujas(int id)
     {
-        List<PujaDTO> result = _inventoService.GetPujas(Id);
-
-        if (result == null)
-            return NotFound();
-
-        return Ok(result);
+        return Ok(_inventoService.GetPujas(id));
     }
+   
 
 
     [HttpDelete("{Id}")]

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Puja } from '../models/puja.model';
@@ -12,16 +13,10 @@ export class PujaService {
     return this.http.get<Puja[]>(environment.API_URL + 'pujas');
   }
 
-  // getPujaDataID(id: number) : Observable<Puja> {
-  //   return this.http.get<Puja>(environment.API_URL + 'inventos/'+ id);
-  // }
-
-
   postPujaData(body : any) : Puja {
     let bodyData = new Puja();
-    bodyData.idInvento = body.idInvento;
+    bodyData.idInvento = body.id;
     bodyData.cantidad = body.cantidad;
-
 
     let result =new Puja();
     this.http.post<Puja>(environment.API_URL + 'pujas', bodyData)

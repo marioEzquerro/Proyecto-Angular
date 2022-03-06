@@ -17,8 +17,9 @@ export class DetallesInventosComponentComponent implements OnInit {
   invento: Invento | null;
   pujas: Puja[] | null;
   idInvento = 0;
-  maxPuja: number = 0;
+  maxPuja = 0;
   nuevaPuja = this.fb.group({
+    id: [''],
     cantidad: ['', Validators.required],
   });
 
@@ -31,26 +32,33 @@ export class DetallesInventosComponentComponent implements OnInit {
     this.invento = null;
     this.pujas = null;
   }
-  // api crear endpoint has de invento
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parameters: any) => {
       this.idInvento = parameters.get('idInvento');
+      this.nuevaPuja.patchValue({ id: this.idInvento });
     });
 
-    this._inventoService.getInventoDataID(this.idInvento).subscribe((x) => (this.invento = x));
-    this._inventoService.getInventoPujas(this.idInvento).subscribe((x) => this.pujas && this.getMaxPuja());
+    this._inventoService
+      .getInventoDataID(this.idInvento)
+      .subscribe((x) => (this.invento = x));
+    this._inventoService
+      .getInventoPujas(this.idInvento)
+      .subscribe((x) => (this.pujas = x) && this.getPujaMayor());
   }
 
-  getMaxPuja() {
+  getPujaMayor() {
+    console.log("-----------------");
     if (this.pujas != null) {
-      this.pujas?.forEach((e) => {
-        if (e.cantidad != null && e.cantidad > this.maxPuja) {
-          this.maxPuja = e.cantidad;
+      this.pujas.forEach((element) => {
+        if (element.cantidad != null) {
+          this.maxPuja = this.maxPuja < element.cantidad ? element.cantidad : this.maxPuja;
         }
       });
     }
   }
 
-  submit() {}
+  submit() {
+    this._pujaService.postPujaData(this.nuevaPuja.value);
+  }
 }
