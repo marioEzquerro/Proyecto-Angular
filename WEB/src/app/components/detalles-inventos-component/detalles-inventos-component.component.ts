@@ -48,7 +48,6 @@ export class DetallesInventosComponentComponent implements OnInit {
   }
 
   getPujaMayor() {
-    console.log("-----------------");
     if (this.pujas != null) {
       this.pujas.forEach((element) => {
         if (element.cantidad != null) {
@@ -60,5 +59,6 @@ export class DetallesInventosComponentComponent implements OnInit {
 
   submit() {
     this._pujaService.postPujaData(this.nuevaPuja.value);
+    setTimeout("location.reload(true);", 300);
   }
 }
