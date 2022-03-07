@@ -27,8 +27,8 @@ public class Startup
         IMapper mapper = mapperConfig.CreateMapper();
         services.AddSingleton(mapper);
 
-        services.AddSingleton<IInventoService, InventoService>();
-        services.AddSingleton<IPujaService, PujaService>();
+        services.AddTransient<IInventoService, InventoService>();
+        services.AddTransient<IPujaService, PujaService>();
 
     }
 

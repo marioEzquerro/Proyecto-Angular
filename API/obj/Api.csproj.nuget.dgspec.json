@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/mario/Proyecto-Angular/API/Api.csproj": {}
+    "/home/alumno/APis/Proyecto-Angular/API/Api.csproj": {}
   },
   "projects": {
-    "/home/mario/Proyecto-Angular/API/Api.csproj": {
+    "/home/alumno/APis/Proyecto-Angular/API/Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mario/Proyecto-Angular/API/Api.csproj",
+        "projectUniqueName": "/home/alumno/APis/Proyecto-Angular/API/Api.csproj",
         "projectName": "Api",
-        "projectPath": "/home/mario/Proyecto-Angular/API/Api.csproj",
-        "packagesPath": "/home/mario/.nuget/packages/",
-        "outputPath": "/home/mario/Proyecto-Angular/API/obj/",
+        "projectPath": "/home/alumno/APis/Proyecto-Angular/API/Api.csproj",
+        "packagesPath": "/home/alumno/.nuget/packages/",
+        "outputPath": "/home/alumno/APis/Proyecto-Angular/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mario/.nuget/NuGet/NuGet.Config"
+          "/home/alumno/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

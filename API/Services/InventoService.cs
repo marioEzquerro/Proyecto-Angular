@@ -42,7 +42,8 @@ public class InventoService : IInventoService
 
     public IEnumerable<PujaDTO> GetPujas(int id)
     {
-        return _mapper.Map<IEnumerable<PujaDTO>>(_context.Pujas.Where(x => x.idInvento == id));
+        var data = _context.Pujas.Where(x => x.idInvento == id).ToList();
+        return _mapper.Map<IEnumerable<PujaDTO>>(data);
     }
 
 
